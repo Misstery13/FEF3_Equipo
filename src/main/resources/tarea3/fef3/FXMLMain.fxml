@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLMainController">
+   <children>
+      <Button fx:id="btn_guardar" layoutX="80.0" layoutY="321.0" mnemonicParsing="false" onAction="#acc_btnguardar" text="GUARDAR" />
+   </children>
+</AnchorPane>
