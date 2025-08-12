@@ -5,15 +5,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 
 public class FXMLMainController {
 
     @javafx.fxml.FXML
-    private Button btn_salir;
-    @javafx.fxml.FXML
     private MenuItem btn_repersonal;
-    @javafx.fxml.FXML
-    private Menu btn_personal;
     @javafx.fxml.FXML
     private MenuItem btn_about;
     @javafx.fxml.FXML
@@ -23,19 +20,19 @@ public class FXMLMainController {
     @javafx.fxml.FXML
     private MenuItem btn_regequipo;
     @javafx.fxml.FXML
-    private Menu btn_equipo;
-    @javafx.fxml.FXML
     private MenuItem btn_redirect;
     @javafx.fxml.FXML
     private MenuBar bar_menu;
     @javafx.fxml.FXML
     private MenuItem btn_regjuga;
+    @javafx.fxml.FXML
+    private AnchorPane contentArea;
 
     @Deprecated
     public void acc_btnguardar(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void acc_btnsalir(ActionEvent actionEvent) {
     }
 
@@ -56,15 +53,16 @@ public class FXMLMainController {
     public void acc_repersonal(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void acc_btnequipo(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void acc_requipo(ActionEvent actionEvent) {
+        cargarContenido("FXMLregistro-equipo");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void acc_personal(ActionEvent actionEvent) {
     }
 
@@ -74,5 +72,14 @@ public class FXMLMainController {
 
     @javafx.fxml.FXML
     public void acc_nomina(ActionEvent actionEvent) {
+    }
+
+    private void cargarContenido(String fxmlFile) {
+        try {
+            AnchorPane pane = javafx.fxml.FXMLLoader.load(getClass().getResource(fxmlFile + ".fxml"));
+            contentArea.getChildren().setAll(pane);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

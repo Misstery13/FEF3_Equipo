@@ -3,37 +3,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLMainController">
-   <children>
-      <Button fx:id="btn_salir" layoutX="265.0" layoutY="341.0" mnemonicParsing="false" onAction="#acc_btnsalir" text="GUARDAR" />
-      <MenuBar fx:id="bar_menu" layoutY="2.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Archivo">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu fx:id="btn_equipo" mnemonicParsing="false" onAction="#acc_btnequipo" text="Equipo">
-            <items>
-              <MenuItem fx:id="btn_requipo" mnemonicParsing="false" onAction="#acc_requipo" text="Registrar Equipo" />
-                  <MenuItem fx:id="btn_nomina" mnemonicParsing="false" onAction="#acc_nomina" text="Listar Nómina Completa" />
-            </items>
-          </Menu>
-          <Menu fx:id="btn_personal" mnemonicParsing="false" onAction="#acc_personal" text="Personal">
-            <items>
-                  <MenuItem fx:id="btn_repersonal" mnemonicParsing="false" onAction="#acc_repersonal" text="Registrar Personal de Utileria" />
-              <MenuItem fx:id="btn_redirect" mnemonicParsing="false" onAction="#acc_redirect" text="Registrar Directivo" />
-                  <MenuItem fx:id="btn_regequipo" mnemonicParsing="false" onAction="#acc_regequipo" text="Registrar Equipo Tecnico" />
-                  <MenuItem fx:id="btn_regjuga" mnemonicParsing="false" onAction="#acc_regjuga" text="Registrar Jugadores" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Ayuda">
-               <items>
-                  <MenuItem fx:id="btn_about" mnemonicParsing="false" onAction="#acc_about" text="Acerca de.." />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-   </children>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="tarea3.fef3.FXMLMainController"
+            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+    <top>
+        <MenuBar fx:id="bar_menu">
+            <menus>
+                <Menu text="Archivo">
+                    <items>
+                        <MenuItem text="Close" />
+                    </items>
+                </Menu>
+                <Menu text="Equipo">
+                    <items>
+                        <MenuItem fx:id="btn_requipo" text="Registrar Equipo" onAction="#acc_requipo"/>
+                        <MenuItem fx:id="btn_nomina" text="Listar Nómina Completa" onAction="#acc_nomina"/>
+                    </items>
+                </Menu>
+                <Menu text="Personal">
+                    <items>
+                        <MenuItem fx:id="btn_repersonal" text="Registrar Personal de Utileria" onAction="#acc_repersonal"/>
+                        <MenuItem fx:id="btn_redirect" text="Registrar Directivo" onAction="#acc_redirect"/>
+                        <MenuItem fx:id="btn_regequipo" text="Registrar Equipo Técnico" onAction="#acc_regequipo"/>
+                        <MenuItem fx:id="btn_regjuga" text="Registrar Jugadores" onAction="#acc_regjuga"/>
+                    </items>
+                </Menu>
+                <Menu text="Ayuda">
+                    <items>
+                        <MenuItem fx:id="btn_about" text="Acerca de.." onAction="#acc_about"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <AnchorPane fx:id="contentArea">
+            <!-- Aquí se cargará dinámicamente el contenido -->
+        </AnchorPane>
+    </center>
+
+</BorderPane>

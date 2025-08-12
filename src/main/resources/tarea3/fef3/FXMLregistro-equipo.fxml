@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLregistroequipo">
+   <children>
+      <Label layoutX="247.0" layoutY="59.0" text="REGISTRAR EQUIPO" />
+      <Label layoutX="166.0" layoutY="141.0" text="Nombre del Equipo:" />
+      <TextField fx:id="txt_equipo" layoutX="286.0" layoutY="137.0" />
+      <TextField fx:id="txt_ciudad" layoutX="286.0" layoutY="190.0" />
+      <TextField fx:id="txt_estado" layoutX="286.0" layoutY="239.0" />
+      <Label layoutX="233.0" layoutY="192.0" text="Ciudad:" />
+      <Label layoutX="234.0" layoutY="243.0" text="Estado:" />
+      <ImageView id="save" fx:id="btn_guardar" fitHeight="47.0" fitWidth="40.0" layoutX="280.0" layoutY="298.0" onMouseClicked="#acc_guardar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../ICONS/save-floppy-svgrepo-com.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
