@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #2667ffff;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLregistrojugadores">
+
+    <!-- Formulario -->
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 15; -fx-background-color: #add7f6ff;">
+         <ComboBox fx:id="cbo_equipolist" onAction="#acc_cboequipo" prefWidth="150.0" promptText="Elige tu equipo" />
+            <GridPane alignment="CENTER" hgap="10" prefHeight="165.0" prefWidth="235.0" vgap="10">
+                <Label text="CI:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtCI" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Nombres:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="txtNombres" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Posición:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="txtPosicion" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Edad:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="txtEdad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label text="Peso (kg):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="txtPeso" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+         <FlowPane alignment="CENTER" prefHeight="54.0" prefWidth="411.0">
+            <children>
+               <ImageView id="save" fx:id="btn_guardar" fitHeight="47.0" fitWidth="41.0" onMouseClicked="#acc_btnguardar" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../ICONS/save-floppy-svgrepo-com.png" />
+                  </image>
+               </ImageView>
+               <ImageView id="clean" fx:id="btn_eliminar" fitHeight="47.0" fitWidth="41.0" onMouseClicked="#acc_btneliminar" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../ICONS/trash-svgrepo-com.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </FlowPane>
+        </VBox>
+    </center>
+
+    <!-- Lista de jugadores -->
+    <bottom>
+        <TableView fx:id="tablaJugadores" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="colCI" text="CI" />
+                <TableColumn fx:id="colNombres" prefWidth="152.0" text="Nombres" />
+                <TableColumn fx:id="colPosicion" prefWidth="106.0" text="Posición" />
+                <TableColumn fx:id="colEdad" prefWidth="54.0" text="Edad" />
+                <TableColumn fx:id="colPeso" prefWidth="47.0" text="Peso" />
+            </columns>
+        </TableView>
+    </bottom>
+   <top>
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 10;" text="Registro de Jugadores" textFill="WHITE" BorderPane.alignment="CENTER" />
+   </top>
+
+</BorderPane>

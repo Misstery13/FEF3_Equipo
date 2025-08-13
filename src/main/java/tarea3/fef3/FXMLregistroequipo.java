@@ -1,7 +1,9 @@
 package tarea3.fef3;
 
 import javafx.event.Event;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 
 public class FXMLregistroequipo {
@@ -13,6 +15,14 @@ public class FXMLregistroequipo {
     private TextField txt_ciudad;
     @javafx.fxml.FXML
     private ImageView btn_guardar;
+
+    @javafx.fxml.FXML
+    public void initialize() {
+        Tooltip tooltipGuardar = new Tooltip("Guardar");
+        Tooltip.install(btn_guardar, tooltipGuardar);
+//        Tooltip tooltipEliminar = new Tooltip("Eliminar");
+//        Tooltip.install(btn_eliminar, tooltipEliminar);
+    }
 
     @javafx.fxml.FXML
     public void acc_guardar(Event event) {
@@ -35,26 +45,20 @@ public class FXMLregistroequipo {
     }
 
     private boolean fun_validar() {
-        /*
-        Nombre de la funcion:fun_validar
-        Descripcion: Valida que los campos que ingrese no esten vacios, retorna
-        Autor: Diana Melena
-        Fecha de creacion: 04/08/2025
-        Fecha de modificacion:
-         */
+
         try {
             if (this.txt_equipo.getText().isEmpty()) {
-                ModGeneral.fun_mensajeInformacion("Cedula no puede estar vacio");
+                ModGeneral.fun_mensajeInformacion("Esto no puede estar vacio");
                 this.txt_equipo.requestFocus();
                 return false;
             }
             if (this.txt_ciudad.getText().isEmpty()) {
-                ModGeneral.fun_mensajeInformacion("Nombre no puede estar vacio");
+                ModGeneral.fun_mensajeInformacion("Esto no puede estar vacio");
                 this.txt_ciudad.requestFocus();
                 return false;
             }
             if (this.txt_estado.getText().isEmpty()) {
-                ModGeneral.fun_mensajeInformacion("Dirección no puede estar vacio");
+                ModGeneral.fun_mensajeInformacion("Esto no puede estar vacio");
                 this.txt_estado.requestFocus();
                 return false;
             }

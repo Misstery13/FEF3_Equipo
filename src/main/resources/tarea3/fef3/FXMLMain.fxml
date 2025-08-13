@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="tarea3.fef3.FXMLMainController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@proove.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLMainController">
 
     <top>
         <MenuBar fx:id="bar_menu">
@@ -18,21 +16,21 @@
                 </Menu>
                 <Menu text="Equipo">
                     <items>
-                        <MenuItem fx:id="btn_requipo" text="Registrar Equipo" onAction="#acc_requipo"/>
-                        <MenuItem fx:id="btn_nomina" text="Listar Nómina Completa" onAction="#acc_nomina"/>
+                        <MenuItem fx:id="btn_requipo" onAction="#acc_requipo" text="Registrar Equipo" />
+                        <MenuItem fx:id="btn_nomina" onAction="#acc_nomina" text="Listar Nómina Completa" />
                     </items>
                 </Menu>
                 <Menu text="Personal">
                     <items>
-                        <MenuItem fx:id="btn_repersonal" text="Registrar Personal de Utileria" onAction="#acc_repersonal"/>
-                        <MenuItem fx:id="btn_redirect" text="Registrar Directivo" onAction="#acc_redirect"/>
-                        <MenuItem fx:id="btn_regequipo" text="Registrar Equipo Técnico" onAction="#acc_regequipo"/>
-                        <MenuItem fx:id="btn_regjuga" text="Registrar Jugadores" onAction="#acc_regjuga"/>
+                        <MenuItem fx:id="btn_repersonal" onAction="#acc_repersonal" text="Registrar Personal de Utileria" />
+                        <MenuItem fx:id="btn_redirect" onAction="#acc_redirect" text="Registrar Directivo" />
+                        <MenuItem fx:id="btn_regequipo" onAction="#acc_regequipo" text="Registrar Equipo Técnico" />
+                        <MenuItem fx:id="btn_regjuga" onAction="#acc_regjuga" text="Registrar Jugadores" />
                     </items>
                 </Menu>
                 <Menu text="Ayuda">
                     <items>
-                        <MenuItem fx:id="btn_about" text="Acerca de.." onAction="#acc_about"/>
+                        <MenuItem fx:id="btn_about" onAction="#acc_about" text="Acerca de.." />
                     </items>
                 </Menu>
             </menus>
@@ -40,9 +38,14 @@
     </top>
 
     <center>
-        <AnchorPane fx:id="contentArea">
-            <!-- Aquí se cargará dinámicamente el contenido -->
-        </AnchorPane>
+        <AnchorPane fx:id="contentArea" style="-fx-background-color: #3b28ccff;">
+         <children>
+            <ImageView fitHeight="282.0" fitWidth="281.0" layoutX="160.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../ICONS/ChatGPT%20Image%2012%20ago%202025,%2008_26_11%20p.m..png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
     </center>
 
 </BorderPane>

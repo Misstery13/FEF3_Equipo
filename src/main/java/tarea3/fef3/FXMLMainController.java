@@ -68,6 +68,7 @@ public class FXMLMainController {
 
     @javafx.fxml.FXML
     public void acc_regjuga(ActionEvent actionEvent) {
+        cargarContenido("FXMLregistro-jugadores");
     }
 
     @javafx.fxml.FXML
@@ -76,10 +77,15 @@ public class FXMLMainController {
 
     private void cargarContenido(String fxmlFile) {
         try {
-            AnchorPane pane = javafx.fxml.FXMLLoader.load(getClass().getResource(fxmlFile + ".fxml"));
-            contentArea.getChildren().setAll(pane);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        javafx.scene.Parent pane = javafx.fxml.FXMLLoader.load(getClass().getResource(fxmlFile + ".fxml"));
+        contentArea.getChildren().setAll(pane);
+        // Anclar a todos los bordes
+        javafx.scene.layout.AnchorPane.setTopAnchor(pane, 0.0);
+        javafx.scene.layout.AnchorPane.setBottomAnchor(pane, 0.0);
+        javafx.scene.layout.AnchorPane.setLeftAnchor(pane, 0.0);
+        javafx.scene.layout.AnchorPane.setRightAnchor(pane, 0.0);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
     }
 }

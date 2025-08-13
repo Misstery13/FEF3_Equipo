@@ -1,10 +1,42 @@
-#save {
+
+#save,
+#clean{
     -fx-background-color: transparent;
     -fx-cursor: hand;
 }
 
-#save:hover {
-    -fx-background-color: #e0e0e0; /* Fondo claro al pasar el mouse */
-    -fx-scale-x: 1.1; /* Efecto de zoom */
+#save:hover,
+#clean:hover {
+    -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
+
+}
+
+#bar_menu {
+    -fx-background-color: #2667FF;
+    -fx-padding: 5px;
+    -fx-spacing: 30px;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+    -fx-border-color: black;
+    -fx-border-width: 0 0 2px 0;
+
+}
+
+#bar_menu .label {
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+}
+
+#bar_menu .menu:hover,
+#bar_menu .menu:focused {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+
+
+}
+
+.root {
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-font-size: 12px;
 }
