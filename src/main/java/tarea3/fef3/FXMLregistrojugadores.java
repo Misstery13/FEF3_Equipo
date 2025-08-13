@@ -41,6 +41,8 @@ public class FXMLregistrojugadores {
     private TextField txtPosicion;
     @javafx.fxml.FXML
     private ComboBox cbo_equipolist;
+    @javafx.fxml.FXML
+    private TableColumn colEquipo;
 
     @javafx.fxml.FXML
     public void initialize() {

@@ -43,6 +43,7 @@ public class FXMLMainController {
 
     @javafx.fxml.FXML
     public void acc_about(ActionEvent actionEvent) {
+        cargarContenido("FXMLAbout");
     }
 
     @javafx.fxml.FXML

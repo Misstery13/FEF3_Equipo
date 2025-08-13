@@ -58,6 +58,7 @@
     <bottom>
         <TableView fx:id="tablaJugadores" prefHeight="200">
             <columns>
+            <TableColumn fx:id="colEquipo" text="Equipo" />
                 <TableColumn fx:id="colCI" text="CI" />
                 <TableColumn fx:id="colNombres" prefWidth="152.0" text="Nombres" />
                 <TableColumn fx:id="colPosicion" prefWidth="106.0" text="Posición" />

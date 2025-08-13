@@ -11,6 +11,7 @@ module tarea3.fef3 {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires javafx.graphics;
+    requires java.desktop;
 
     opens tarea3.fef3 to javafx.fxml;
     exports tarea3.fef3;
