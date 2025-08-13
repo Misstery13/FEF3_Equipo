@@ -3,24 +3,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #add7f6ff;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLregistroequipo">
-   <children>
-      <Label layoutX="188.0" layoutY="29.0" text="REGISTRAR EQUIPO">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font></Label>
-      <Label layoutX="166.0" layoutY="115.0" text="Nombre del Equipo:" />
-      <TextField fx:id="txt_equipo" layoutX="286.0" layoutY="111.0" />
-      <TextField fx:id="txt_ciudad" layoutX="286.0" layoutY="164.0" />
-      <TextField fx:id="txt_estado" layoutX="286.0" layoutY="213.0" />
-      <Label layoutX="233.0" layoutY="166.0" text="Ciudad:" />
-      <Label layoutX="234.0" layoutY="217.0" text="Estado:" />
-      <ImageView id="save" fx:id="btn_guardar" fitHeight="47.0" fitWidth="40.0" layoutX="280.0" layoutY="272.0" onMouseClicked="#acc_guardar" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../ICONS/save-floppy-svgrepo-com.png" />
-         </image>
-      </ImageView>
-   </children>
-</AnchorPane>
+<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2667ffff;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLregistroequipo">
+
+    <!-- Título en la parte superior -->
+    <top>
+        <Label style="-fx-font-size: 24px; -fx-background-color: #2667ffff; -fx-font-weight: bold;" text="REGISTRAR EQUIPO" textFill="WHITE" BorderPane.alignment="CENTER" />
+    </top>
+
+    <!-- Formulario en el centro -->
+    <center>
+        <GridPane alignment="CENTER" hgap="10" minHeight="-Infinity" prefHeight="246.0" prefWidth="600.0" style="-fx-background-color: #add7f6ff;" vgap="15">
+            <Label text="Nombre del Equipo:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txt_equipo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Ciudad:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txt_ciudad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Estado:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="txt_estado" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </center>
+
+    <!-- Botón guardar en la parte inferior -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <ImageView id="save" fx:id="btn_guardar" fitHeight="47.0" fitWidth="40.0" onMouseClicked="#acc_guardar" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../ICONS/save-floppy-svgrepo-com.png" />
+                </image>
+            </ImageView>
+        </HBox>
+    </bottom>
+
+</BorderPane>

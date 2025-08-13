@@ -6,7 +6,7 @@
 
 <BorderPane style="-fx-background-color: #2667ffff;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLregistrojugadores">
 
-    <!-- Formulario -->
+
     <center>
         <VBox alignment="CENTER" spacing="10" style="-fx-padding: 15; -fx-background-color: #add7f6ff;">
          <ComboBox fx:id="cbo_equipolist" onAction="#acc_cboequipo" prefWidth="150.0" promptText="Elige tu equipo" />
@@ -54,7 +54,7 @@
         </VBox>
     </center>
 
-    <!-- Lista de jugadores -->
+
     <bottom>
         <TableView fx:id="tablaJugadores" prefHeight="200">
             <columns>

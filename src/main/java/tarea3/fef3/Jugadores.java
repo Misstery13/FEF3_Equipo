@@ -41,6 +41,22 @@ public class Jugadores {
         this.posicion = posicion;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+
     public String getEquipo() {
         return equipo;
     }
