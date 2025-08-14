@@ -1,6 +1,7 @@
 package tarea3.fef3;
 
 import javafx.event.Event;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
@@ -10,11 +11,11 @@ public class FXMLregistroequipo {
     @javafx.fxml.FXML
     private TextField txt_equipo;
     @javafx.fxml.FXML
-    private TextField txt_estado;
-    @javafx.fxml.FXML
     private TextField txt_ciudad;
     @javafx.fxml.FXML
     private ImageView btn_guardar;
+    @javafx.fxml.FXML
+    private ChoiceBox cbo_estado;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -22,6 +23,8 @@ public class FXMLregistroequipo {
         Tooltip.install(btn_guardar, tooltipGuardar);
 //        Tooltip tooltipEliminar = new Tooltip("Eliminar");
 //        Tooltip.install(btn_eliminar, tooltipEliminar);
+        cbo_estado.getItems().clear();
+        cbo_estado.getItems().addAll("Activo", "Inactivo");
     }
 
     @javafx.fxml.FXML
@@ -30,7 +33,7 @@ public class FXMLregistroequipo {
             if (fun_validar()) {
                 String equipo = this.txt_equipo.getText();
                 String ciudad = this.txt_ciudad.getText();
-                String estado = this.txt_estado.getText();
+                String estado = this.cbo_estado.getValue().toString();
                 Equipo objEquipo = new Equipo(equipo, ciudad, estado);
                 BD.equipos.add(objEquipo);
 //                System.out.println("Se registro con exito");
@@ -57,14 +60,24 @@ public class FXMLregistroequipo {
                 this.txt_ciudad.requestFocus();
                 return false;
             }
-            if (this.txt_estado.getText().isEmpty()) {
-                ModGeneral.fun_mensajeInformacion("Esto no puede estar vacio");
-                this.txt_estado.requestFocus();
+            if (this.cbo_estado.getValue() == null) {
+                ModGeneral.fun_mensajeInformacion("Debe seleccionar un estado");
+                this.cbo_estado.requestFocus();
                 return false;
             }
+
             return true;
         } catch (Exception e) {
             return false;
         }
     }
+
+    @javafx.fxml.FXML
+    public void acc_cboestado(Event event) {
+
+   }
+
+   public void estado(){
+
+   }
 }

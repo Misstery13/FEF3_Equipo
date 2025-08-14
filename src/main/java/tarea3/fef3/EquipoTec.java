@@ -5,12 +5,14 @@ public class EquipoTec {
     private String nombres;
     private String nacionalidad;
     private String cargo;
+    private String equipo;
 
-    public EquipoTec(String ci, String nombres, String nacionalidad, String cargo) {
+    public EquipoTec(String ci, String nombres, String nacionalidad, String cargo, String equipo) {
         this.ci = ci;
         this.nombres = nombres;
         this.nacionalidad = nacionalidad;
         this.cargo = cargo;
+        this.equipo = equipo;
     }
     public String getCi() {
         return ci;
@@ -35,5 +37,11 @@ public class EquipoTec {
     }
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+    public String getEquipo() {
+        return equipo;
+    }
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
     }
 }

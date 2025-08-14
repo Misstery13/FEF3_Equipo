@@ -4,14 +4,14 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@proove.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLMainController">
+<BorderPane prefHeight="450.0" prefWidth="600.0" stylesheets="@proove.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLMainController">
 
     <top>
         <MenuBar fx:id="bar_menu">
             <menus>
                 <Menu text="Archivo">
                     <items>
-                        <MenuItem text="Close" />
+                        <MenuItem fx:id="btn_vaciar" onAction="#acc_btnvaciar" text="Vaciar" />
                     </items>
                 </Menu>
                 <Menu text="Equipo">
@@ -40,7 +40,7 @@
     <center>
         <AnchorPane fx:id="contentArea" style="-fx-background-color: #3b28ccff;">
          <children>
-            <ImageView fitHeight="282.0" fitWidth="281.0" layoutX="160.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="282.0" fitWidth="281.0" layoutX="160.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../ICONS/ChatGPT%20Image%2012%20ago%202025,%2008_26_11%20p.m..png" />
                </image>

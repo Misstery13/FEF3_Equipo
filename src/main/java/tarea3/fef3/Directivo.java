@@ -4,11 +4,13 @@ public class Directivo {
     private String ci;
     private String nombres;
     private String cargo;
+    private String equipo;
 
-    public Directivo(String ci, String nombres, String cargo) {
+    public Directivo(String ci, String nombres, String cargo, String equipo) {
         this.ci = ci;
         this.nombres = nombres;
         this.cargo = cargo;
+        this.equipo = equipo;
     }
 
     public String getCi() {
@@ -34,4 +36,10 @@ public class Directivo {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+    public String getEquipo() {
+        return equipo;
+    }
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
+        }
 }

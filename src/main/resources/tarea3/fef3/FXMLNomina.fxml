@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2667ff;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea3.fef3.FXMLconsultaEquipos">
+
+    <top>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 15;">
+            <Label text="Consulta de Información de Equipos" style="-fx-font-size: 20px; -fx-font-weight: bold;" textFill="WHITE" />
+            <ComboBox fx:id="cbo_equipos" onAction="#acc_cboEquipoSeleccionado" prefWidth="200.0" promptText="Seleccione un equipo" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPaneDatos" tabClosingPolicy="UNAVAILABLE">
+
+            <!-- TAB JUGADORES -->
+            <Tab text="Jugadores">
+                <TableView fx:id="tablaJugadores" prefHeight="400.0">
+                    <columns>
+                        <TableColumn fx:id="colJ_CI" text="CI" prefWidth="100" />
+                        <TableColumn fx:id="colJ_Nombres" text="Nombres" prefWidth="150" />
+                        <TableColumn fx:id="colJ_Posicion" text="Posición" prefWidth="120" />
+                        <TableColumn fx:id="colJ_Edad" text="Edad" prefWidth="80" />
+                        <TableColumn fx:id="colJ_Peso" text="Peso" prefWidth="80" />
+                    </columns>
+                </TableView>
+            </Tab>
+
+
+            <Tab text="Personal de Utilería">
+                <TableView fx:id="tablaUtileria" prefHeight="400.0">
+                    <columns>
+                        <TableColumn fx:id="colU_CI" text="CI" prefWidth="100" />
+                        <TableColumn fx:id="colU_Nombres" text="Nombres" prefWidth="150" />
+                        <TableColumn fx:id="colU_Ocupacion" text="Ocupación" prefWidth="150" />
+                    </columns>
+                </TableView>
+            </Tab>
+
+
+            <Tab text="Directivos">
+                <TableView fx:id="tablaDirectivos" prefHeight="400.0">
+                    <columns>
+                        <TableColumn fx:id="colD_CI" text="CI" prefWidth="100" />
+                        <TableColumn fx:id="colD_Nombres" text="Nombres" prefWidth="150" />
+                        <TableColumn fx:id="colD_Cargo" text="Cargo" prefWidth="150" />
+                    </columns>
+                </TableView>
+            </Tab>
+
+
+            <Tab text="Equipo Técnico">
+                <TableView fx:id="tablaEquipoTecnico" prefHeight="400.0">
+                    <columns>
+                        <TableColumn fx:id="colET_CI" text="CI" prefWidth="100" />
+                        <TableColumn fx:id="colET_Nombres" text="Nombres" prefWidth="150" />
+                        <TableColumn fx:id="colET_Nacionalidad" text="Nacionalidad" prefWidth="150" />
+                        <TableColumn fx:id="colET_Cargo" text="Cargo" prefWidth="150" />
+                    </columns>
+                </TableView>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+</BorderPane>

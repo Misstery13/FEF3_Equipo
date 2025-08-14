@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -8,7 +9,13 @@
 
     <!-- Título en la parte superior -->
     <top>
-        <Label style="-fx-font-size: 24px; -fx-background-color: #2667ffff; -fx-font-weight: bold;" text="REGISTRAR EQUIPO" textFill="WHITE" BorderPane.alignment="CENTER" />
+        <Label style="-fx-font-size: 24px; -fx-background-color: #2667ffff; -fx-font-weight: bold;" text="REGISTRAR EQUIPO" textFill="WHITE" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding></Label>
     </top>
 
     <!-- Formulario en el centro -->
@@ -21,7 +28,7 @@
             <TextField fx:id="txt_ciudad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
             <Label text="Estado:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <TextField fx:id="txt_estado" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <ChoiceBox fx:id="cbo_estado" onMouseClicked="#acc_cboestado" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
@@ -31,6 +38,9 @@
             <RowConstraints />
             <RowConstraints />
          </rowConstraints>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
         </GridPane>
     </center>
 

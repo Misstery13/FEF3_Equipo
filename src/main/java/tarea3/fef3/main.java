@@ -1,3 +1,6 @@
+//Autor: Diana Melena Santander
+//Fecha: 2025-08-13
+
 package tarea3.fef3;
 
 import javafx.application.Application;

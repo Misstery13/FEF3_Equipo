@@ -4,12 +4,14 @@ public class Personal {
     private String ci;
     private String nombres;
     private String ocupacion;
+    private String equipo;
 
 
-    public Personal(String ci, String nombres, String ocupacion) {
+    public Personal(String ci, String nombres, String ocupacion, String equipo) {
         this.ci = ci;
         this.nombres = nombres;
         this.ocupacion = ocupacion;
+        this.equipo = equipo;
     }
 
     public String getCi() {
@@ -34,5 +36,11 @@ public class Personal {
 
     public void setOcupacion(String ocupacion) {
         this.ocupacion = ocupacion;
+    }
+    public String getEquipo() {
+        return equipo;
+    }
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
     }
 }

@@ -1,12 +1,8 @@
 package tarea3.fef3;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.event.Event;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 import java.util.stream.Collectors;
@@ -43,15 +39,18 @@ public class FXMLregistrojugadores {
     private ComboBox cbo_equipolist;
     @javafx.fxml.FXML
     private TableColumn colEquipo;
+    @javafx.fxml.FXML
+    private CheckBox check_ced;
 
     @javafx.fxml.FXML
     public void initialize() {
         cbo_equipolist.getItems().clear();
         cbo_equipolist.getItems().addAll(
                 BD.equipos.stream()
+                        .filter(equipo -> "Activo".equals(equipo.getEstado()))
                         .map(equipo -> equipo.getNombreEq()) // Ajusta el método según tu clase Equipo
                         .collect(Collectors.toList()));
-
+        colEquipo.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("equipo"));
         colCI.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("ci"));
         colNombres.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("nombres"));
         colPosicion.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("posicion"));
@@ -91,7 +90,12 @@ public class FXMLregistrojugadores {
 
     @javafx.fxml.FXML
     public void acc_btneliminar(Event event) {
-
+        txtNombres.clear();
+        txtCI.clear();
+        txtPosicion.clear();
+        txtPeso.clear();
+        txtEdad.clear();
+        cbo_equipolist.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML
@@ -103,8 +107,7 @@ public class FXMLregistrojugadores {
             } else {
                 String equipo = (String) this.cbo_equipolist.getValue();
                 BD.jugadores.stream().filter(jugadores -> jugadores.getEquipo().equals(equipo)).collect(Collectors.toList());
-                // Aquí podrías cargar los jugadores del equipo seleccionado en la tabla
-                // Por ejemplo, BD.jugadores.stream().filter(j -> j.getEquipo().equals(equipo)).collect(Collectors.toList());
+
             }
         } catch (Exception e) {
             ModGeneral.fun_mensajeError(e.getMessage());
@@ -147,6 +150,51 @@ public class FXMLregistrojugadores {
             return true;
         } catch (Exception e) {
             return false;
+        }
+    }
+
+    public boolean validarCedula() {
+        String cedula = this.txtCI.getText();
+        if (cedula == null || cedula.length() != 10) {
+            ModGeneral.fun_mensajeInformacion("La cédula debe tener 10 dígitos.");
+            return false;
+        }
+        int region = Integer.parseInt(cedula.substring(0, 2));
+        if (!((region >= 1 && region <= 24) || region == 30)) { //01 al 24 son las provincias | 30 es para ciudadanos que viven en el exterior
+            ModGeneral.fun_mensajeInformacion("La cédula debe pertenecer a una región válida (01-24 o 30).");
+            return false;
+        }
+        int ultimoDigito = Integer.parseInt(cedula.substring(9, 10));
+        int pares = Integer.parseInt(cedula.substring(1, 2))
+                + Integer.parseInt(cedula.substring(3, 4))
+                + Integer.parseInt(cedula.substring(5, 6))
+                + Integer.parseInt(cedula.substring(7, 8));
+
+        int[] impares = new int[5];
+        for (int i = 0; i < 5; i++) {
+            int num = Integer.parseInt(cedula.substring(i * 2, i * 2 + 1)) * 2;
+            if (num > 9) num -= 9;
+            impares[i] = num;
+        }
+        int sumaTotal = pares + impares[0] + impares[1] + impares[2] + impares[3] + impares[4];
+        int decena = ((sumaTotal / 10) + 1) * 10;
+        int digitoValidador = decena - sumaTotal;
+        if (digitoValidador == 10) digitoValidador = 0;
+        return digitoValidador == ultimoDigito;
+    }
+
+    @javafx.fxml.FXML
+    public void acc_checkced(ActionEvent actionEvent) {
+        if (check_ced.isSelected()) {
+            this.txtCI.setDisable(false);
+            if (validarCedula()) {
+                ModGeneral.fun_mensajeInformacion("Cédula válida.");
+            } else {
+                ModGeneral.fun_mensajeInformacion("Cédula inválida.");
+            }
+        } else {
+//            this.txtCI.setDisable(true);
+//            this.txtCI.clear();
         }
     }
 }
