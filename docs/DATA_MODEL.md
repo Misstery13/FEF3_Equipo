@@ -1,10 +1,10 @@
-# Data Model
+# 🗂️ Data Model
 
 All data is kept in-memory via `BD` static lists. There is no persistence layer.
 
-## Entities
+## 🧩 Entities
 
-### Equipo
+### 🏟️ Equipo
 - nombreEq: String
 - ciudad: String
 - estado: String ("Activo" | "Inactivo")
@@ -18,7 +18,7 @@ Example:
 Equipo barcelona = new Equipo("Barcelona SC", "Guayaquil", "Activo");
 ```
 
-### Jugadores
+### ⚽ Jugadores
 - ci: String (10-digit Ecuadorian ID recommended)
 - nombres: String
 - posicion: String
@@ -31,7 +31,7 @@ Example:
 Jugadores j = new Jugadores("0912345678", "Juan Pérez", "Delantero", 24, 72.5f, "Barcelona SC");
 ```
 
-### Personal
+### 🧺 Personal
 - ci: String
 - nombres: String
 - ocupacion: String
@@ -42,7 +42,7 @@ Example:
 Personal u = new Personal("0911122233", "Carlos Soto", "Utilero", "Barcelona SC");
 ```
 
-### Directivo
+### 🧑‍💼 Directivo
 - ci: String
 - nombres: String
 - cargo: String
@@ -53,7 +53,7 @@ Example:
 Directivo d = new Directivo("0922233344", "Ana Gómez", "Presidente", "Barcelona SC");
 ```
 
-### EquipoTec
+### 🛠️ EquipoTec
 - ci: String
 - nombres: String
 - nacionalidad: String
@@ -65,7 +65,7 @@ Example:
 EquipoTec et = new EquipoTec("0933344455", "Luis Morales", "Ecuador", "Director Técnico", "Barcelona SC");
 ```
 
-## In-memory storage
+## 🧠 In-memory storage
 
 `BD` holds lists for all entities:
 
@@ -79,7 +79,7 @@ BD.equipoTec   // ArrayList<EquipoTec>
 
 Team selection lists across the UI are filtered to `Equipo` where `estado.equals("Activo")`.
 
-## Seeding example
+## 🌱 Seeding example
 
 You can pre-populate the in-memory store at startup (e.g., in `Launcher` before launching, or within a dedicated initializer):
 

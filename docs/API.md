@@ -1,8 +1,8 @@
-# Public API Reference
+# 📖 Public API Reference
 
 Module: `tarea3.fef3`
 
-## Application Boot
+## 🚪 Application Boot
 
 - `class Launcher`
   - `public static void main(String[] args)` — Entry point. Launches JavaFX application with `main.class`.
@@ -10,7 +10,7 @@ Module: `tarea3.fef3`
 - `class main extends javafx.application.Application`
   - `public void start(Stage stage)` — Loads `FXMLMain.fxml`, initializes the primary stage.
 
-## Utilities
+## 🧰 Utilities
 
 - `class ModGeneral`
   - `public static void fun_mensajeInformacion(String mensaje)` — Shows an information alert.
@@ -23,7 +23,7 @@ Module: `tarea3.fef3`
   - `public static ArrayList<Personal> personal`
   - `public static ArrayList<Jugadores> jugadores`
 
-## Domain Model
+## 🧩 Domain Model
 
 - `class Equipo`
   - Fields: `nombreEq`, `ciudad`, `estado`, `personal`, `directivos`, `equipoTec`, `jugadores`
@@ -50,7 +50,7 @@ Module: `tarea3.fef3`
   - Getters/Setters: `getCi/setCi`, `getNombres/setNombres`, `getNacionalidad/setNacionalidad`, `getCargo/setCargo`, `getEquipo/setEquipo`
   - Constructor: `EquipoTec(String ci, String nombres, String nacionalidad, String cargo, String equipo)`
 
-## Controllers and FXML Actions
+## 🎛️ Controllers and FXML Actions
 
 All controllers are wired via `@FXML` and are invoked from UI events defined in their respective FXML files.
 
@@ -128,7 +128,7 @@ Validation helpers:
 - `public void initialize()` — Binds all table columns and fills team combobox with active team names.
 - `public void acc_cboEquipoSeleccionado(ActionEvent)` — Filters and displays `Jugadores`, `Personal`, `Directivo`, and `EquipoTec` by selected team across tabs.
 
-## FXML Views
+## 🖼️ FXML Views
 
 - `FXMLMain.fxml` — Main shell with menu and `contentArea` where other views are loaded.
 - `FXMLregistro-equipo.fxml` — Team registration form.
@@ -139,11 +139,11 @@ Validation helpers:
 - `FXMLNomina.fxml` — Roster/summary view with tabs per category.
 - `FXMLAbout.fxml` — About dialog linking to the GitHub repository.
 
-### `FXMLAbout`
+### ℹ️ `FXMLAbout`
 
 - `public void acc_hlrepo(ActionEvent)` — Opens the project repository URL in the system browser (if supported).
 
-## Examples
+## ✨ Examples
 
 ### Show an information message
 ```java
