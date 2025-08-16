@@ -1,0 +1,28 @@
+name: Maven CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '24'
+          cache: 'maven'
+
+      - name: Build with Maven
+        run: mvn -B -ntp -DskipTests=false clean verify
+
+      - name: Package (optional)
+        if: success()
+        run: mvn -B -ntp -DskipTests -P !production package
